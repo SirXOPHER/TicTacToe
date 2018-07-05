@@ -6,6 +6,6 @@ public class TicTacToeShould {
 
     @Test
     public void verifyPlayerXgoesFirst() {
-        assertEquals(true, new TicTacToe().makeMark());
+        assertEquals(true, new TicTacToe().makeMark("X"));
     }
 }
