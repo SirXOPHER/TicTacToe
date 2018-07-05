@@ -6,9 +6,9 @@ public class TicTacToe {
         currentPlayer = "X";
     }
 
-    public boolean makeMark(String player) throws IllegalArgumentException {
+    public boolean makeMark(String player) throws IllegalMoveException {
         if (player.equals(currentPlayer) == false) {
-            throw new IllegalArgumentException();
+            throw new IllegalMoveException();
         }
 
         if (currentPlayer.equals("X")) {

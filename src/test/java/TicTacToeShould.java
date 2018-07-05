@@ -5,12 +5,12 @@ import static org.junit.Assert.assertEquals;
 public class TicTacToeShould {
 
     @Test
-    public void verifyPlayerXgoesFirst() {
+    public void verifyPlayerXgoesFirst() throws IllegalMoveException {
         assertEquals(true, new TicTacToe().makeMark("X"));
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void verifyPlayerOGoingFirstThrowsException() {
+    @Test(expected = IllegalMoveException.class)
+    public void verifyPlayerOGoingFirstThrowsException() throws IllegalMoveException {
         assertEquals(true, new TicTacToe().makeMark("O"));
     }
 
@@ -19,7 +19,7 @@ public class TicTacToeShould {
 //    }
 
     @Test
-    public void ensurePlayersAlternateTurns() {
+    public void ensurePlayersAlternateTurns() throws IllegalMoveException {
         TicTacToe ticTacToe = new TicTacToe();
         assertEquals(true,ticTacToe.makeMark("X"));
         assertEquals(true,ticTacToe.makeMark("O"));
