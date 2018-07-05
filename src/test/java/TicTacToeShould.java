@@ -24,8 +24,8 @@ public class TicTacToeShould {
     @Test(expected = InvalidCurrentPlayerException.class)
     public void ensurePlayersAlternateTurns() throws IllegalMoveException , InvalidCurrentPlayerException {
         ticTacToe.makeMark("X", 0, 0);
-        ticTacToe.makeMark("O", 0, 0);
-        ticTacToe.makeMark("O", 0, 0);
+        ticTacToe.makeMark("O", 1, 1);
+        ticTacToe.makeMark("O", 2, 2);
     }
 
     @Test
@@ -37,9 +37,9 @@ public class TicTacToeShould {
         assertEquals("O", ticTacToe.getMarkAtPosition(1, 1));
     }
 
-//    @Test(expected = IllegalMoveException.class)
-//    public void ensurePlayersCannotPlayOnAPlayedPosition() throws IllegalMoveException {
-//        ticTacToe.makeMark("X", 0, 0);
-//        ticTacToe.makeMark("O", 0, 0);
-//    }
+    @Test(expected = IllegalMoveException.class)
+    public void ensurePlayersCannotPlayOnAPlayedPosition() throws IllegalMoveException, InvalidCurrentPlayerException {
+        ticTacToe.makeMark("X", 0, 0);
+        ticTacToe.makeMark("O", 0, 0);
+    }
 }

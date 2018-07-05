@@ -13,6 +13,10 @@ public class TicTacToe {
             throw new InvalidCurrentPlayerException();
         }
 
+        if (getMarkAtPosition(row, column) != null) {
+            throw new IllegalMoveException();
+        }
+
         board[row][column] = player;
 
         if (currentPlayer.equals("X")) {
