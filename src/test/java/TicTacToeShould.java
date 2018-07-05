@@ -12,30 +12,24 @@ public class TicTacToeShould {
         ticTacToe = new TicTacToe();
     }
 
-    @Test
-    public void verifyPlayerXgoesFirst() throws IllegalMoveException {
-        assertEquals(true, ticTacToe.makeMark("X", 0, 0));
-    }
-
-    // TODO: in refactor, kill this assert (not necessary)
-    // TODO: refactor: change exception type
-    @Test(expected = IllegalMoveException.class)
-    public void verifyPlayerOGoingFirstThrowsException() throws IllegalMoveException {
-        assertEquals(true, ticTacToe.makeMark("O", 0, 0));
+    @Test(expected = InvalidCurrentPlayerException.class)
+    public void verifyPlayerOGoingFirstThrowsException() throws IllegalMoveException, InvalidCurrentPlayerException {
+        ticTacToe.makeMark("O", 0, 0);
     }
 
 //    @Test(expected = InvalidMoveException.class)
 //    public void playerCannotPlayOnPlayedPosition() {
 //    }
 
-    @Test
-    public void ensurePlayersAlternateTurns() throws IllegalMoveException {
-        assertEquals(true, ticTacToe.makeMark("X", 0, 0));
-        assertEquals(true, ticTacToe.makeMark("O", 0, 0));
+    @Test(expected = InvalidCurrentPlayerException.class)
+    public void ensurePlayersAlternateTurns() throws IllegalMoveException , InvalidCurrentPlayerException {
+        ticTacToe.makeMark("X", 0, 0);
+        ticTacToe.makeMark("O", 0, 0);
+        ticTacToe.makeMark("O", 0, 0);
     }
 
     @Test
-    public void allowPlayersToMarkAPosition() throws IllegalMoveException {
+    public void allowPlayersToMarkAPosition() throws IllegalMoveException, InvalidCurrentPlayerException {
         ticTacToe.makeMark("X", 0, 0);
         ticTacToe.makeMark("O", 1, 1);
 

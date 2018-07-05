@@ -8,9 +8,9 @@ public class TicTacToe {
         board = new String[3][3];
     }
 
-    public boolean makeMark(String player, int row, int column) throws IllegalMoveException {
+    public void makeMark(String player, int row, int column) throws IllegalMoveException, InvalidCurrentPlayerException {
         if (player.equals(currentPlayer) == false) {
-            throw new IllegalMoveException();
+            throw new InvalidCurrentPlayerException();
         }
 
         board[row][column] = player;
@@ -20,8 +20,6 @@ public class TicTacToe {
         } else {
             currentPlayer = "X";
         }
-
-        return true;
     }
 
     public String getMarkAtPosition(int row, int column) {
