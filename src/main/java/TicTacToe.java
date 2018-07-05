@@ -4,6 +4,6 @@ public class TicTacToe {
 
 
     public boolean makeMark() {
-        throw new NotImplementedException("Not supported yet.");
+        return true;
     }
 }
