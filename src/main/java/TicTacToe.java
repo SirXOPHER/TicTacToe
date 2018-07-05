@@ -7,11 +7,11 @@ public class TicTacToe {
     }
 
     public boolean makeMark(String player) throws IllegalArgumentException {
-        if (!player.equals(currentPlayer)) {
+        if (player.equals(currentPlayer) == false) {
             throw new IllegalArgumentException();
         }
 
-        if (currentPlayer == "X") {
+        if (currentPlayer.equals("X")) {
             currentPlayer = "O";
         } else {
             currentPlayer = "X";
