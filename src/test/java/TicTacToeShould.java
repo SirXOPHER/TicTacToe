@@ -8,4 +8,9 @@ public class TicTacToeShould {
     public void verifyPlayerXgoesFirst() {
         assertEquals(true, new TicTacToe().makeMark("X"));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void verifyPlayerOGoingFirstThrowsException() {
+        assertEquals(true, new TicTacToe().makeMark("O"));
+    }
 }
