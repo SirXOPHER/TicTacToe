@@ -6,7 +6,7 @@ public class TicTacToe {
         currentPlayer = "X";
     }
 
-    public boolean makeMark(String player) throws IllegalMoveException {
+    public boolean makeMark(String player, int row, int column) throws IllegalMoveException {
         if (player.equals(currentPlayer) == false) {
             throw new IllegalMoveException();
         }
@@ -18,5 +18,9 @@ public class TicTacToe {
         }
 
         return true;
+    }
+
+    public String getMarkAtPosition(int row, int column) {
+        return "X";
     }
 }
